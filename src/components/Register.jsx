@@ -35,6 +35,7 @@ const Register = (props) => {
         setEmailInput('');
         setPasswordInput('');
         props.setToken(newUser.token);
+        localStorage.setItem('token', newUser.token);
         navigate('/');
       }
     } catch(err) {
