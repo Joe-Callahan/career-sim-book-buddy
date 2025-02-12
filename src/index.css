@@ -1,3 +1,39 @@
 body {
   background-color: lightblue;
 }
+
+.homeBookImages {
+  height: 25vh;
+}
+
+.singleBookContainerHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  background-color: white;
+  margin: 1vw;
+  padding: 1vw;
+}
+
+#homeBookDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: green;
+  justify-content: center;
+}
+
+.bookDetailsImage {
+  height: 50vh;
+  padding: 2vh;
+}
+
+.singleBookContainer {
+  display: flex;
+  padding: 5vh;
+}
+
+.bookDetailsWritten {
+  display: flex;
+  flex-direction: column;
+}
