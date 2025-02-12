@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const LogIn = (props) => {
   const [loginEmailInput, setLoginEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const navigate = useNavigate();
 
   const logIn = async(e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const LogIn = (props) => {
       });
       const userObj = await response.json();
       props.setToken(userObj.token);
+      navigate('/');
     } catch(err) {
       alert(err);
     }

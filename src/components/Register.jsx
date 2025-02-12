@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = (props) => {
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const navigate = useNavigate();
 
   const createUser = async(e) => {
     e.preventDefault();
@@ -34,6 +35,7 @@ const Register = (props) => {
         setEmailInput('');
         setPasswordInput('');
         props.setToken(newUser.token);
+        navigate('/');
       }
     } catch(err) {
       alert(`Error`, err);
