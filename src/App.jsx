@@ -13,12 +13,23 @@ const App = () => {
   return (
     <>
       <h1>Book Buddy</h1>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/register'>Sign Up</Link>
-        <Link to='/login'>Sign In</Link>
-        <Link to='/profile'>Profile Info</Link>
-      </nav>
+      <>
+        { 
+          token ? (
+            <nav>
+              <Link to='/'>Home</Link>
+              <Link to='/profile'>Profile Info</Link>
+            </nav>
+          ) : (
+            <nav>
+              <Link to='/'>Home</Link>
+              <Link to='/register'>Sign Up</Link>
+              <Link to='/login'>Sign In</Link>
+            </nav>
+          )
+        }
+      </>
+      
 
       <Routes>
         <Route path='/' element={<Home setSelectedBook={setSelectedBook} />} />
