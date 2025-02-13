@@ -33,7 +33,7 @@ const BookDetails = (props) => {
             <>
               {
                 props.selectedBook.available ? (
-                  <button onClick={checkout}>Checkout This Book</button>
+                  <button>Checkout This Book</button>
                   ) : (
                   <p>Sorry. This book is currently checked out.</p>
                 )
