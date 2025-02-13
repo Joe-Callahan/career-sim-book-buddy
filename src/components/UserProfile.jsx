@@ -24,8 +24,9 @@ const UserProfile = (props) => {
           {
             props.token ? (
               <section>
-                <h3>{`Name: ${userInfo.firstname} ${userInfo.lastname}`}</h3>
-                <h4>{`Email: ${userInfo.email}`}</h4>
+                <p>{`Name: ${userInfo.firstname} ${userInfo.lastname}`}</p>
+                <p>{`Email: ${userInfo.email}`}</p>
+                <p>Books Checked Out:</p>
               </section>
             ) : (
               <h3>User Info Not Found. Please sign in or create a profile!</h3>
