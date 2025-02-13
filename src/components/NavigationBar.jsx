@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const NavigationBar = (props) => {
   const navigate = useNavigate();
-  
+
   const signOut = (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
@@ -18,7 +18,7 @@ const NavigationBar = (props) => {
           props.token ? (
             <nav>
               <Link to='/'>Home</Link>
-              <Link to='/profile'>Profile Info</Link>
+              <Link to='/profile'>Account Management</Link>
               <Link to='/login' onClick={signOut}>Sign Out</Link>
             </nav>
           ) : (

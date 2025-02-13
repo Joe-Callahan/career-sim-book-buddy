@@ -43,10 +43,14 @@ const BookDetails = (props) => {
             <section>{selectedBook.description}</section>
             <>
               {
-                selectedBook.available ? (
-                  <button onClick={checkout}>Checkout This Book</button>
+                props.token ? (
+                  selectedBook.available ? (
+                    <button onClick={checkout}>Checkout This Book</button>
                   ) : (
-                  <p>Sorry. This book is currently checked out.</p>
+                    <p>Sorry. This book is currently checked out.</p>
+                  )
+                ) : (
+                  <p>Please sign in or create an account to see a book's availability.</p>
                 )
               }
             </>

@@ -43,34 +43,40 @@ const Register = (props) => {
     }
   }
 
-  return(
+  return (
     <>
-      <h2>Register New User</h2>
+      {
+        props.token? (<p>You're Already Signed In!</p>) : (
+          <>
+            <h2>Register New User</h2>
       
-      <form onSubmit={createUser}>
-        <input
-          placeholder='First Name'
-          onChange={(e) => {setFirstNameInput(e.target.value)}}
-          value={firstNameInput} />
-        <input
-          placeholder='Last Name'
-          onChange={(e) => {setLastNameInput(e.target.value)}}
-          value={lastNameInput} />
-        <input 
-          placeholder='email' 
-          type='email'
-          onChange={(e) => {setEmailInput(e.target.value)}}
-          value={emailInput} />
-        <input
-          placeholder='Choose a Password'
-          type='password' 
-          onChange={(e) => {setPasswordInput(e.target.value)}}
-          value={passwordInput}/>
-        <button>Sign Me Up</button>
-      </form>
+            <form onSubmit={createUser}>
+              <input
+                placeholder='First Name'
+                onChange={(e) => {setFirstNameInput(e.target.value)}}
+                value={firstNameInput} />
+              <input
+                placeholder='Last Name'
+                onChange={(e) => {setLastNameInput(e.target.value)}}
+                value={lastNameInput} />
+              <input 
+                placeholder='email' 
+                type='email'
+                onChange={(e) => {setEmailInput(e.target.value)}}
+                value={emailInput} />
+              <input
+                placeholder='Choose a Password'
+                type='password' 
+                onChange={(e) => {setPasswordInput(e.target.value)}}
+                value={passwordInput}/>
+              <button>Sign Me Up</button>
+            </form>
 
-      <h4>Already Have An Account?</h4>
-      <Link to='/login'>Sign In Here</Link>
+            <h4>Already Have An Account?</h4>
+            <Link to='/login'>Sign In Here</Link>
+          </>
+        )
+      }
     </>
   )
 }

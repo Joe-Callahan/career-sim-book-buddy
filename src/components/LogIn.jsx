@@ -30,6 +30,9 @@ const LogIn = (props) => {
 
   return (
     <>
+      {
+        props.token? (<p>You're Already Signed In!</p>) : (
+          <>
       <h1>Log In</h1>
       <form onSubmit={logIn}>
         <input 
@@ -44,6 +47,9 @@ const LogIn = (props) => {
       </form>
       <h4>New to Book Buddy?</h4>
       <Link to='/register'>Create An Account Here</Link>
+      </>
+        )
+      }
     </>
   )
 }

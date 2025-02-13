@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const UserProfile = (props) => {
+const AcctMgmt = (props) => {
   const [userInfo, setUserInfo] = useState({});
   const [checkedOutBooks, setCheckedOutBooks] = useState([]);
 
@@ -88,4 +88,4 @@ const UserProfile = (props) => {
   )
 }
 
-export default UserProfile
+export default AcctMgmt

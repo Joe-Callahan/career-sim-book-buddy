@@ -4,7 +4,7 @@ import Home from './components/Home.jsx';
 import BookDetails from './components/BookDetails.jsx';
 import Register from './components/Register.jsx';
 import LogIn from './components/LogIn.jsx';
-import UserProfile from './components/UserProfile.jsx';
+import AcctMgmt from './components/AcctMgmt.jsx';
 import NavigationBar from './components/NavigationBar.jsx';
 
 const App = () => {
@@ -16,9 +16,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/books/:bookId' element={<BookDetails token={token} />} />
-        <Route path='/register' element={<Register setToken={setToken} />} />
-        <Route path='/login' element={<LogIn setToken={setToken} />} />
-        <Route path='/profile' element={<UserProfile token={token} />} />
+        <Route path='/register' element={<Register token={token} setToken={setToken} />} />
+        <Route path='/login' element={<LogIn token={token} setToken={setToken} />} />
+        <Route path='/profile' element={<AcctMgmt token={token} />} />
       </Routes>
     </>
   )
