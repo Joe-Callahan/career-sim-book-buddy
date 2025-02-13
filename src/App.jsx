@@ -33,7 +33,7 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home setSelectedBook={setSelectedBook} />} />
-        <Route path='/books/:id' element={<BookDetails selectedBook={selectedBook} />} />
+        <Route path='/books/:id' element={<BookDetails selectedBook={selectedBook} token={token} />} />
         <Route path='/register' element={<Register setToken={setToken} />} />
         <Route path='/login' element={<LogIn setToken={setToken} />} />
         <Route path='/profile' element={<UserProfile token={token} />} />
