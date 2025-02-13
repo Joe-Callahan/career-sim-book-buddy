@@ -1,9 +1,42 @@
 body {
-  background-color: lightblue;
+  background-color: red;
+}
+/* HEADER/NAVBAR */
+header {
+  background-color: brown;
+  color: orange;
+  display: flex;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  border-style: dotted;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+nav > a {
+  color: orange;
+  font-family: "Niconne", serif;
+  font-size: 3vh;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+}
+
+h1, h2 {
+  font-family: "Niconne", serif;
+  font-size: 7vh;
+}
+/* HOMEPAGE BOOK DISPLAY */
 .homeBookImages {
   height: 25vh;
+  width: 75%;
 }
 
 .singleBookContainerHome {
@@ -11,7 +44,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 25vw;
-  background-color: white;
+  background-color: brown;
   margin: 1vw;
   padding: 1vw;
 }
@@ -19,8 +52,15 @@ body {
 #homeBookDisplay {
   display: flex;
   flex-wrap: wrap;
-  background-color: green;
+  background-color: brown;
   justify-content: center;
+  color: orange;
+  border-style: dotted;
+  border-top: none;
+}
+
+#homeBookDisplay > a {
+  color: orange;
 }
 
 .bookDetailsImage {
@@ -38,7 +78,26 @@ body {
   flex-direction: column;
 }
 
-nav {
+main {
+  background-color: brown;
+  justify-content: center;
+  color: orange;
+  border-style: dotted;
+  border-top: none;
+}
+
+form {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  width: 30vw;
+}
+
+button {
+  width: 20vw;
+  color: black;
+}
+
+.message {
+  font-size: 3vh;
+  border-style: dotted;
 }

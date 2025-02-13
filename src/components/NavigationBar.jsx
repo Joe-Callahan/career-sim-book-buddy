@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import bookworm from '../assets/bookworm.jpg'
 
 const NavigationBar = (props) => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const NavigationBar = (props) => {
     <>
       <header>
         <h1>Book Buddy</h1>
+        <img src={bookworm} />
         {
           props.token ? (
             <nav>
