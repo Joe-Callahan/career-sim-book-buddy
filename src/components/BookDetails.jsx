@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const BookDetails = (props) => {
+  
   return (
     <>
     <Link to='/'>Back</Link>
@@ -12,8 +13,16 @@ const BookDetails = (props) => {
           <div className='bookDetailsWritten'>
             <h2>{props.selectedBook.title}</h2>
             <h3>{`by ${props.selectedBook.author}`}</h3>
-            <h4>{props.selectedBook.available ? `Available!` : `Checked Out`} </h4>
             <section>{props.selectedBook.description}</section>
+            <>
+              {
+                props.selectedBook.available ? (
+                  <button onClick={checkout}>Checkout This Book</button>
+                  ) : (
+                  <p>Sorry. This book is currently checked out.</p>
+                )
+              }
+            </>
           </div>
       </div>
     </>
