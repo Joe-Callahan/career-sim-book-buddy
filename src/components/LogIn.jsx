@@ -21,6 +21,7 @@ const LogIn = (props) => {
       });
       const userObj = await response.json();
       props.setToken(userObj.token);
+      localStorage.setItem('token', userObj.token);
       navigate('/');
     } catch(err) {
       alert(err);
