@@ -8,7 +8,7 @@ import UserProfile from './components/UserProfile.jsx';
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState({});
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [token, setToken] = useState('');
   
   return (
     <>
