@@ -1,21 +1,50 @@
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const BookDetails = (props) => {
+  const [selectedBook, setSelectedBook] = useState({});
+  const {bookId} = useParams();
+
+  useEffect(() => {
+    const getBook = async() => {
+      const response = await fetch (`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}`);
+      const bookObj = await response.json();
+      setSelectedBook(bookObj.book);
+    }
+    getBook();
+  })
+
+
+  const checkout = async(e) => {
+    const response = await fetch (`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${props.token}`
+      },
+      body: JSON.stringify({
+        available: false
+      })
+    });
+    const checkedOutBook = await response.json();
+    alert(`${checkedOutBook.book.title} has been checked out!`);
+  }
 
   return (
     <>
       <div className='singleBookContainer'>
         <img 
-          src={props.selectedBook.coverimage} 
-          alt={`cover of ${props.selectedBook.title}`}
+          src={selectedBook.coverimage} 
+          alt={`cover of ${selectedBook.title}`}
           className='bookDetailsImage' />
           <div className='bookDetailsWritten'>
-            <h2>{props.selectedBook.title}</h2>
-            <h3>{`by ${props.selectedBook.author}`}</h3>
-            <section>{props.selectedBook.description}</section>
+            <h2>{selectedBook.title}</h2>
+            <h3>{`by ${selectedBook.author}`}</h3>
+            <section>{selectedBook.description}</section>
             <>
               {
-                props.selectedBook.available ? (
-                  <button>Checkout This Book</button>
+                selectedBook.available ? (
+                  <button onClick={checkout}>Checkout This Book</button>
                   ) : (
                   <p>Sorry. This book is currently checked out.</p>
                 )
