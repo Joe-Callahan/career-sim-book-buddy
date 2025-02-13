@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
 
 const BookDetails = (props) => {
 
   return (
     <>
-    <Link to='/'>Back</Link>
       <div className='singleBookContainer'>
         <img 
           src={props.selectedBook.coverimage} 
