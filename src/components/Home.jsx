@@ -21,9 +21,8 @@ const Home = (props) => {
             return (
               <Link
                 to={`/books/${singleBook.id}`}
-                key={singleBook.id} 
-                className='singleBookContainerHome'
-                onClick={() => {props.setSelectedBook(singleBook)}}>
+                key={singleBook.id}
+                className='singleBookContainerHome'>
                   <img 
                     src={singleBook.coverimage} 
                     alt={`cover of ${singleBook.title}`} 
