@@ -52,38 +52,40 @@ const AcctMgmt = (props) => {
 
   return (
     <>
-      <h2>Profile Info</h2>
-        <>
-          {
-            props.token ? (
-              <section>
-                <p>{`Name: ${userInfo.firstname} ${userInfo.lastname}`}</p>
-                <p>{`Email: ${userInfo.email}`}</p>
-                <p>{`Books Checked Out: ${checkedOutBooks.length}`}</p>
-                <ul>
-                  {
-                    checkedOutBooks.map((singleBook) => {
-                      return ( 
-                        <>
-                          <li key={singleBook.coverimage}>
-                            {singleBook.title}</li>
-                          <button 
-                            key={singleBook.id}
-                            value ={singleBook.id}
-                            onClick={returnBook}>
-                              Return This Book
-                          </button>
-                        </>
-                      )
-                    })
-                  }
-                </ul>
-              </section>
-            ) : (
-              <h3>User Info Not Found. Please sign in or create a profile!</h3>
-            )
-          }
-        </>
+      <main>
+        <h2>Profile Info</h2>
+          <>
+            {
+              props.token ? (
+                <section>
+                  <p>{`Name: ${userInfo.firstname} ${userInfo.lastname}`}</p>
+                  <p>{`Email: ${userInfo.email}`}</p>
+                  <p>{`Books Checked Out: ${checkedOutBooks.length}`}</p>
+                  <ul>
+                    {
+                      checkedOutBooks.map((singleBook) => {
+                        return ( 
+                          <>
+                            <li key={singleBook.coverimage}>
+                              {singleBook.title}</li>
+                            <button 
+                              key={singleBook.id}
+                              value ={singleBook.id}
+                              onClick={returnBook}>
+                                Return This Book
+                            </button>
+                          </>
+                        )
+                      })
+                    }
+                  </ul>
+                </section>
+              ) : (
+                <h3>User Info Not Found. Please sign in or create a profile!</h3>
+              )
+            }
+          </>
+        </main>
     </>
   )
 }

@@ -31,23 +31,25 @@ const LogIn = (props) => {
   return (
     <>
       {
-        props.token? (<p>You're Already Signed In!</p>) : (
+        props.token? (<main><p>You're Already Signed In!</p></main>) : (
           <>
-      <h1>Log In</h1>
-      <form onSubmit={logIn}>
-        <input 
-          placeholder='email'
-          type='email'
-          onChange={(e) => {setLoginEmailInput(e.target.value)}}/>
-        <input 
-          placeholder='password'
-          type='password'
-          onChange={(e) => {setPasswordInput(e.target.value)}} />
-        <button>Sign In</button>
-      </form>
-      <h4>New to Book Buddy?</h4>
-      <Link to='/register'>Create An Account Here</Link>
-      </>
+            <main>
+              <h2>Log In</h2>
+              <form onSubmit={logIn}>
+                <input 
+                  placeholder='email'
+                  type='email'
+                  onChange={(e) => {setLoginEmailInput(e.target.value)}}/>
+                <input 
+                  placeholder='password'
+                  type='password'
+                  onChange={(e) => {setPasswordInput(e.target.value)}} />
+                <button>Sign In</button>
+              </form>
+              <h4>New to Book Buddy?</h4>
+              <Link to='/register'>Create An Account Here</Link>
+            </main>
+          </>
         )
       }
     </>

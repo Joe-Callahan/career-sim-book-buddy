@@ -46,8 +46,9 @@ const Register = (props) => {
   return (
     <>
       {
-        props.token? (<p>You're Already Signed In!</p>) : (
+        props.token? (<main><p>You're Already Signed In!</p></main>) : (
           <>
+          <main>
             <h2>Register New User</h2>
       
             <form onSubmit={createUser}>
@@ -74,6 +75,7 @@ const Register = (props) => {
 
             <h4>Already Have An Account?</h4>
             <Link to='/login'>Sign In Here</Link>
+            </main>
           </>
         )
       }
